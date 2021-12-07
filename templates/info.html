@@ -7,12 +7,16 @@
 {% block main %}
 
 <h1>Sessions and Information</h1> 
+
 <p></p>
 
+<!--Displays Processing image and description in column to column format-->
 <section class="col-container">
+    <!--displays processing image in one column-->
     <div class="col">
         <img src="static/processing.jpg" alt="Processing Camp" width = 100%>
     </div>
+    <!--displays processing description in another column-->
     <div class="col">
         <h3>Processing</h3>
         <p>Our first session features the language Processing, an extension of Java with a flexible software sketchbook. 
@@ -25,7 +29,10 @@
             Time: 9 am - 12 pm</p>
     </div>
 </section> 
+
+<!--Displays Java image and description in column to column format-->
 <section class="col-container">
+    <!--displays Java description one column-->
     <div class="col">
         <h3>Java</h3>
         <p>Designed to be  a faster-paced camp for students who have completed Processing 
@@ -36,8 +43,9 @@
             <BR>
             Dates: August 2 - August 6 
             <BR>
-            Time: 9 am - 12 pm
+            Time: 9 am - 12 pm</p>
     </div>
+    <!--displays java image in one column-->
     <div class="col">
         <img src="static/java.jpeg" alt="Java Camp" width = 100%>
     </div> 
@@ -45,51 +53,52 @@
 
 <h1>Register Now!</h1>
 
+<!--displays message received from app.py in color css-->
 <h2 style="color: {{ color }}">{{message}}</h2>
-
 <div>
+    <!--registration form for the camps-->
     <form action="/info" method="post">
+        <!--takes in a first name input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">First Name</span>
             </div>
             <input required type="text" class="border form-group w-25 start" name="firstname" aria-describedby="basic-addon1">
         </div>  
-
+        <!--takes in a last name input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Last Name</span>
             </div>
             <input required type="text" class="border form-group w-25 start" name="lastname" aria-describedby="basic-addon1">
         </div> 
-
+        <!--takes in an email input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Email</span>
             </div>
             <input required type="text" class="border form-group w-25 start" name="email" aria-describedby="basic-addon1">
         </div>
-
+        <!--takes in a phone number input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Phone Number</span>
             </div>
             <input required type="text" class="border form-group w-25 start" name="phonenumber" aria-describedby="basic-addon1">
         </div>
-
+        <!--takes in an age input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Age</span>
             </div>
             <input required type="text" class="border form-group w-25 start" name="age" aria-describedby="basic-addon1">
         </div>
-
+        <!--takes in the camp session the user wants to sign up for via a check box-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">What camp session do you want to sign up for?</span>
             </div>
         </div>
-
         <div class="row checkbox-row">
             <div class="col-xs-2 col-xs-offset-4">
               <div class="checkbox-inline">
@@ -105,23 +114,29 @@
                 </div>
               </div>
             </div>
-          </div>
-          <p></p>
+        </div>
+        
+        <p></p>
+        
+        <!--submit button-->
         <button type="submit" class="btn btn-outline-primary">Register</button>
     </form>
 </div>
 
 <hr>
 
+<!--camp recap videos-->
 <h1>Camp Recaps</h1>
-
+<!--using column/column format to display two videos of the camps-->
 <section class="col-container">
+    <!--2020 video in a column-->
     <div class="col embed-responsive embed-responsive-16by9">
         <h2>Recap of 2020 Camps (Online)</h2>
         <iframe  
             src="https://www.youtube.com/embed/yxDr6JfMWfE" allowfullscreen frameborder="0">
         </iframe>
     </div>
+    <!--2019 video in a column-->
     <div class="col embed-responsive embed-responsive-16by9">
         <h2>Recap of 2019 Camps (In Person)</h2>
         <iframe 
@@ -132,34 +147,45 @@
 
 <hr>
 
+<!--student testimonials-->
 <h1>Student Testimonies</h1>
 
+<!--testimonials displayed into three different columns-->
 <section class="col-container">
     <div class="col">
+        <!--image of testimony 1-->
         <img class="image" src="static/test1.jpeg" alt="Testimony 1" width = 100%>
         <h3>Processing</h3>
+        <!--testimony 1-->
         <p>"I really enjoyed this camp because there were many challenging 
             labs and competitions we did to improve our understanding of 
-            Processing" - Drew Kaprielian</p>
+            Processing" - Drew Kaprielian
+        </p>
     </div>
     <div class="col">
+        <!--image of testimony 2-->
         <img class="image" src="static/test2.jpeg" alt="Testimony 2" width = 100%>
         <h3>Java</h3>
+        <!--testimony 2-->
         <p>"Java really challenged me, and it was  interesting learning about 
             all these different concepts and ways to make algorithms on my 
             computer." - Sela Guajardo</p>
     </div>
     <div class="col">
+        <!--image of testimony 3-->
         <img class="image" src="static/test3.jpeg" alt="Testimony 3" width = 100%>
         <h3>Workshops</h3>
+        <!--testimony 3-->
         <p>"The robotic finger simulation was really fun because we used 
             basic household items to connect to a robotic hand-made finger 
             and made it move." - Max Ouyang</p>
     </div>
 </section> 
 
+<!--parent testimonies-->
 <h1>Parent Testimonies</h1>
 
+<!--one column from one parent's testimony-->
 <section class="col-container">
     <div class="col">
         <h3>Holly Ferrel (2020)</h3>

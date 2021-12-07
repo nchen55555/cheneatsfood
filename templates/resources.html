@@ -6,8 +6,10 @@
 
 {% block main %}
 <h1>Session 2 Java Materials</h1>
+
 <h3>Materials are posted daily! We'll also add recordings of our lessons once they're available.</h3>
 
+<!--links to the different resources that are available to registered users-->
 <a href="https://cherrycreekschools-org.zoom.us/rec/share/0U-C9nQSKc_j71wV_jiOZiPPDrOU1Bgky5hpDAwESzsNMwkjySHCm-WcylfJhLTC.Wup4mmxlvVru2B7H?startTime=1627917362000">
     Recording of Lesson 0
 </a>
@@ -27,9 +29,12 @@
 <a href="https://drive.google.com/file/d/1FIf4ZN--PSm362MsfLUc1RkNxpkRRd4o/view">
     Worksheet 0  
 </a>
+
+<!--spaces-->
 <BR>
 <BR>
 <BR>
+
 <a href="https://cherrycreekschools-org.zoom.us/rec/play/c14ii8EowtrXYDHWbhFh9U2l-pcw3-9_RPwQ5h8y5FkasbJf3VEfqY-f1B5oEg3zLCFGupkEAKTh0w7Z.RZNcOtrECQLh9b3F?startTime=1628004285000&_x_zm_rtaid=cuyrcmEvSQGVBDfsWvHgRw.1638850647741.b4903f3892fd682e038a513a635ac8dc&_x_zm_rhtaid=197">
     Recording of Lesson 1
 </a>
@@ -49,9 +54,12 @@
  <a href="https://drive.google.com/file/d/1XAcY_-phUbroOIFA9LKor3w3nOxeLFbP/view">
     Worksheet 1  
  </a>
+
+ <!--spaces-->
  <BR>
  <BR>
  <BR>
+
 <a href="https://cherrycreekschools-org.zoom.us/rec/play/jFj20oSElyHBDCNhA90CSPF2YOZlzX5GIylDhNIl_paQwrc5JzDk_-Lxk-cL1lRBRNM7AG1qD3tyM_Yb.ucyuWfeynxPVzOwT?startTime=1628090164000&_x_zm_rtaid=cuyrcmEvSQGVBDfsWvHgRw.1638850647741.b4903f3892fd682e038a513a635ac8dc&_x_zm_rhtaid=197">
     Recording of Lesson 2
 </a>
@@ -74,41 +82,42 @@
 
 <p></p>
 
-
+<!--form that allows admins only to post more blogs-->
 {% if admin == 1 %}
 <h1>Blog Post</h1>
-
+<!--displays message from app.py with color css-->
 <h2 style="color: {{ color }}">{{message}}</h2>
 
+<!--blog post form-->
 <div>
     <form action="/resources" method="post">
+        <!--title input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Title</span>
             </div>
             <input required type="text" class="border form-group w-25 start" placeholder = "Title" name="title" aria-describedby="basic-addon1">
         </div>  
-
+        <!--date input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Date</span>
             </div>
             <input required type="text" class="border form-group w-25 start" placeholder = "Date (ex. June 23, 2019)" name="date" aria-describedby="basic-addon1">
         </div> 
-
+        <!--image source input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
               <span class="input-group-text">Image Source</span>
             </div>
             <input required type="text" class="border form-group w-25" placeholder = "Image (ex. camps.jpg)" name="image" aria-describedby="basic-addon1">
         </div>
-
+        <!--blog input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
                 <span class="input-group-text">Blog Post Text</span>
             </div>
         </div>
-
         <div class="input-group mb-3 justify-content-center">
             <textarea required name="text" rows="4" cols="50" class="border" id = "left" aria-describedby="basic-addon1">
             </textarea>

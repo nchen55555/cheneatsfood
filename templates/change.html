@@ -6,19 +6,21 @@
 
 {% block main %}
 
+<!--Change Password-->
 <h1 id = "left">Change Password</h1>
+<!--displays the message (if the form was successfully submitted or not) with a color that is transmitted from flask-->
 <h3 id = "left" style="color: {{ color }}">{{message}}</h3>
     <form id = "left" action="/change" method="post">
         <div class="mb-3">
-            <!-- username input -->
+            <!-- old username input -->
             <input autocomplete="off" autofocus class="inputleft form-control mx-auto w-auto" id="username" name="oldusername" placeholder="Old Username" type="text">
         </div>
         <div class="mb-3">
-            <!-- password input -->
+            <!-- old password input -->
             <input class="inputleft form-control mx-auto w-auto" id="password" name="oldpassword" placeholder="Old Password" type="password">
         </div>
         <div class="mb-3">
-            <!-- password input -->
+            <!-- new password input -->
             <input class="inputleft form-control mx-auto w-auto" id="password" name="newpassword" placeholder="New Password" type="password">
         </div>
         <!-- submit button -->

@@ -1,16 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Sign In
+    Log In
 {% endblock %}
 
 {% block main %}
 
 <h1 id = "left">Log In</h1>
+
 <p id="left">Once you have registered for the camps, you will receive your login information via email. You can later change your password, but if you desire to 
-    change your email, please email us. Logging in will give you access to the resources page. 
-</p>
+    change your email, please email us. Logging in will give you access to the resources page. </p>
+<!--displays the message that was passed by app.py via color css-->   
 <h3 id = "left" style="color: {{ color }}">{{message}}</h3>
+    <!--login form-->
     <form id = "left" action="/login" method="post">
         <div class="mb-3">
             <!-- username input -->
