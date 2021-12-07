@@ -20,13 +20,18 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-#database
+#connects to the camps database
 db = sqlite3.connect("camps.db", check_same_thread=False)
+#creates a table called volunterResponses under the camps database
 db.execute("CREATE TABLE IF NOT EXISTS 'volunteerResponses' ('volunteer_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'interest' TEXT NOT NULL, 'experience' TEXT NOT NULL, 'notes' TEXT NOT NULL)")    
+#creates a table called registration under the camps database 
 db.execute("CREATE TABLE IF NOT EXISTS 'registration' ('registration_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'phonenumber' TEXT NOT NULL, 'camp' INTEGER NOT NULL)")    
+#creates a table called blogs under the the camps database 
 db.execute("CREATE TABLE IF NOT EXISTS 'blogs' ('blog_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'title' TEXT NOT NULL, 'date' DATETIME NOT NULL, 'imagesource' TEXT NOT NULL, 'text' TEXT NOT NULL)")    
+#creates a table called members in the camps database 
 db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'firstname' TEXT NOT NULL, 'lastname' TEXT NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL, 'admin' BOOLEAN NOT NULL)")    
 
+#establishes mail connection 
 app.config.update(dict(
     DEBUG = True,
     MAIL_SERVER = 'smtp.gmail.com',
@@ -51,15 +56,18 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+#home page 
 @app.route("/")
 def index():
     """Show camp homepage"""
-    # TODO 
+    #returns the template index.html to send user to the home page 
     return render_template("index.html")
 
+#about page
 @app.route("/about")
 def about():
     """Show about page"""
+    #returns the template about.html to send user to the about page 
     return render_template("about.html")
 
 @app.route("/info", methods=["GET", "POST"])
