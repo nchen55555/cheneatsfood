@@ -70,19 +70,24 @@ def about():
     #returns the template about.html to send user to the about page 
     return render_template("about.html")
 
+#sessions and information page 
 @app.route("/info", methods=["GET", "POST"])
 def info():
     """Sessions and Information"""
+    #sets the color variable to red (will display message in red css)
     color = "red"
-    message = ""
+    #checks to see if request was through GET or POST
     if request.method == "GET":
         return render_template("info.html")
  
-    else:
-        
+    #request is through POST
+    else:  
+
+        #checks to see if the inputted age is a valid integer  
         try:
             int(request.form.get("age"))
         except ValueError:
+            #outputs an error message 
             message = "Input a Valid Age Please"
             return render_template("info.html", message=message, color=color)
 
