@@ -21,7 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = sqlite3.connect("camps.db", check_same_thread=False)
-db.execute("CREATE TABLE IF NOT EXISTS 'volunteerResponses' ('volunteer_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'interest' TEXT NOT NULL, 'experience' TEXT NOT NULL, 'notes' TEXT NOT NULL)")    
+db.execute("CREATE TABLE IF NOT EXISTS 'volunteerResponses' ('volunteer_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'interest' TEXT NOT NULL, 'experience' TEXT NOT NULL, 'notes' TEXT NOT NULL)")    
 db.execute("CREATE TABLE IF NOT EXISTS 'registration' ('registration_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'phonenumber' TEXT NOT NULL, 'camp' INTEGER NOT NULL)")    
 db.execute("CREATE TABLE IF NOT EXISTS 'blogs' ('blog_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'title' TEXT NOT NULL, 'date' DATETIME NOT NULL, 'imagesource' TEXT NOT NULL, 'text' TEXT NOT NULL)")    
 db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'firstname' TEXT NOT NULL, 'lastname' TEXT NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL, 'admin' BOOLEAN NOT NULL)")    
