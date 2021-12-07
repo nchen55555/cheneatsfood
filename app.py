@@ -7,6 +7,8 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
 
+# Nicole Chen CS50 Final
+
 # Configure application
 app = Flask(__name__)
 
