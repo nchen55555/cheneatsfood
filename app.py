@@ -356,6 +356,7 @@ def volunteers():
         first = request.form.get("firstname")
         last = request.form.get("lastname")
         age = int(request.form.get("age"))
+        email = request.form.get("email")
         interest = request.form.get("interest")
         experience = request.form.get("experience")
         notes = request.form.get("notes")
@@ -369,6 +370,9 @@ def volunteers():
         if not age:
             message = "Please input your age."
             return render_template("change.html", message=message, color=color)
+        if not email:
+            message = "Please input your email."
+            return render_template("change.html", message=message, color=color)
         if not interest:
             message = "Please input your interest."
             return render_template("change.html", message=message, color=color)
@@ -376,10 +380,25 @@ def volunteers():
             message = "Please input your experience."
             return render_template("change.html", message=message, color=color)
         
-        message = "Thank you for submitting your application!"
-        db.execute("INSERT INTO volunteerResponses (first, last, age, interest, experience, notes) VALUES (?, ?, ?, ?, ?, ?)", 
-                   (first, last, age, interest, experience, notes))
-        db.commit()
+        response = requests.get(
+            "https://isitarealemail.com/api/email/validate",
+        params = {'email': email})
+
+        status = response.json()['status']
+        if status == "valid":
+            message = "Thank you for submitting your application!"
+            db.execute("INSERT INTO volunteerResponses (first, last, age, email, interest, experience, notes) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+                   (first, last, age, email, interest, experience, notes))
+            db.commit()
+            msg = Message('DTC Computer Science Camp Volunteer Application', sender = 'dtccscamp@gmail.com', recipients = [email])
+            msg.body = "Hi! Thank you for submitting your volunteer application to DTC Computer Science Camps! We will send out another email in the next coming weeks with more information on your application and its next steps."
+            mail.send(msg)
+            color = "green"
+        else:
+            message = "There was a problem with your email. Please enter a valid email address"
+
+        return render_template("info.html", message=message, color=color)
+        
         return render_template("volunteers.html", message=message)
 
 
