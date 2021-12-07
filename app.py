@@ -30,11 +30,11 @@ db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL U
 mail= Mail(app)
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'dtccscamp@gmail.com'
 app.config['MAIL_PASSWORD'] = 'DTCcsr0ck5!'
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 def login_required(f):
