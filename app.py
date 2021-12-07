@@ -106,9 +106,9 @@ def info():
         if (camp1 is not None) and (camp2 is not None):
             camps = 3
         elif (camp1 is None) and (camp2 is not None):
-            camps = 1
-        elif (camp2 is None) and (camp1 is not None):
             camps = 2
+        elif (camp2 is None) and (camp1 is not None):
+            camps = 1
 
         response = requests.get(
             "https://isitarealemail.com/api/email/validate",
