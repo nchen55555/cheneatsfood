@@ -26,13 +26,25 @@ db.execute("CREATE TABLE IF NOT EXISTS 'registration' ('registration_id' INTEGER
 db.execute("CREATE TABLE IF NOT EXISTS 'blogs' ('blog_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'title' TEXT NOT NULL, 'date' DATETIME NOT NULL, 'imagesource' TEXT NOT NULL, 'text' TEXT NOT NULL)")    
 db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'firstname' TEXT NOT NULL, 'lastname' TEXT NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL, 'admin' BOOLEAN NOT NULL)")    
 
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'dtccscamp@gmail.com'
-app.config['MAIL_PASSWORD'] = 'DTCcsr0ck5!'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
+app.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = 'dtccscamp@gmail.com',
+    MAIL_PASSWORD = 'DTCcsr0ck5!',
+))
 mail = Mail(app)
+
+
+#app.config['MAIL_SERVER']='smtp.gmail.com'
+#app.config['MAIL_PORT'] = 587
+#app.config['MAIL_USERNAME'] = 'dtccscamp@gmail.com'
+#app.config['MAIL_PASSWORD'] = 'DTCcsr0ck5!'
+#app.config['MAIL_USE_TLS'] = True
+#app.config['MAIL_USE_SSL'] = False
+#mail = Mail(app)
 
 
 def login_required(f):
