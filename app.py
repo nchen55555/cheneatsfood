@@ -20,6 +20,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+#database
 db = sqlite3.connect("camps.db", check_same_thread=False)
 db.execute("CREATE TABLE IF NOT EXISTS 'volunteerResponses' ('volunteer_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'interest' TEXT NOT NULL, 'experience' TEXT NOT NULL, 'notes' TEXT NOT NULL)")    
 db.execute("CREATE TABLE IF NOT EXISTS 'registration' ('registration_id' INTEGER NOT NULL UNIQUE PRIMARY KEY, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'age' INTEGER NOT NULL, 'email' TEXT NOT NULL, 'phonenumber' TEXT NOT NULL, 'camp' INTEGER NOT NULL)")    
