@@ -177,7 +177,7 @@ def contact():
 
             msg = Message('Contact Us Message', sender = 'dtccscamp@gmail.com', recipients = [email])
             msg.body = name + " with an email of " + email + " sent you this message: \n" + message
-            mail.send(msg)
+            # mail.send(msg)
             color = "green"
         else:
             m = "There was a problem with your email. Please input a valid email."
