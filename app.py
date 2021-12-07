@@ -37,16 +37,6 @@ app.config.update(dict(
 ))
 mail = Mail(app)
 
-
-#app.config['MAIL_SERVER']='smtp.gmail.com'
-#app.config['MAIL_PORT'] = 587
-#app.config['MAIL_USERNAME'] = 'dtccscamp@gmail.com'
-#app.config['MAIL_PASSWORD'] = 'DTCcsr0ck5!'
-#app.config['MAIL_USE_TLS'] = True
-#app.config['MAIL_USE_SSL'] = False
-#mail = Mail(app)
-
-
 def login_required(f):
     """
     Decorate routes to require login.
