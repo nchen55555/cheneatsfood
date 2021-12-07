@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<h1 id = "left">Change Password</h1>
+<h3 id = "left" style="color: {{ color }}">{{message}}</h3>
+    <form id = "left" action="/change" method="post">
+        <div class="mb-3">
+            <!-- username input -->
+            <input autocomplete="off" autofocus class="inputleft form-control mx-auto w-auto" id="username" name="oldusername" placeholder="Old Username" type="text">
+        </div>
+        <div class="mb-3">
+            <!-- password input -->
+            <input class="inputleft form-control mx-auto w-auto" id="password" name="oldpassword" placeholder="Old Password" type="password">
+        </div>
+        <div class="mb-3">
+            <!-- password input -->
+            <input class="inputleft form-control mx-auto w-auto" id="password" name="newpassword" placeholder="New Password" type="password">
+        </div>
+        <!-- submit button -->
+        <button class="inputleft btn btn-primary" type="submit">Change</button>
+    </form>
+{% endblock %}

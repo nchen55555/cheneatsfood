@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block main %}
+<div class="header">
+    <h2>Blog</h2>
+</div>
+
+
+<div class="row">
+    <div class="leftcolumn">
+      {% for blog in blogs %}
+      <div class="card">
+        <h2>{{blog[0]}}</h2>
+        <h5>{{blog[2]}}</h5>
+        <div>
+          <img class="center" src="static/{{blog[3]}}" alt="{{blog[0]}}"></img>
+        </div>
+        <p></p>
+        <form action="/subblog" method="get">
+          <button name="blogid" type="submit" value="{{blog[1]}}">Read More</button>
+        </form>      
+      </div>
+      {%endfor%}
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>Nicole Chen</h2>
+        <div></div>
+            <img src="/static/writer.jpg" alt="Nicole Chen">
+            <p>Nicole Chen is one of the co-founders at DTC Computer Science Camp. She blogs for the camps. </p>
+        </div>
+    </div>
+</div>     
+
+
+{% endblock %}
+

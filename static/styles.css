@@ -1,0 +1,183 @@
+.col-container {
+    display: table;
+    width: 100%;
+}
+
+.col {
+    display: table-cell;
+    padding: 16px;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+  
+@media only screen and (max-width: 600px) {
+    .col { 
+      display: block;
+      width: 100%;
+    }
+}
+
+.text {
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+h6{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .lightblue
+{
+    color: #26C0E9;
+}
+
+nav .navbar-brand .lightyellow
+{
+    color: #E6E926;
+}
+nav .navbar-brand .lightgreen
+{
+    color: #29E926;
+}
+nav .navbar-brand .purple
+{
+    color: #5915F5;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+* {
+    box-sizing: border-box;
+}
+
+/*about html */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+  
+  /* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.image {
+    border-radius: 100%;
+}
+
+/*blog html*/
+
+* {
+    box-sizing: border-box;
+}
+  
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+  
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+  
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+  
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+  
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+  
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+  
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+#module {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height:auto;
+}
+
+/*change html*/
+
+#left{
+    text-align:left;
+}
+.inputleft {
+    float: left;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+/*volunteers html*/
+
+p{
+    word-break: normal;
+}
+

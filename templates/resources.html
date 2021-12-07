@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Resources
+{% endblock %}
+
+{% block main %}
+<h1>Session 2 Java Materials</h1>
+<h3>Materials are posted daily! We'll also add recordings of our lessons once they're available.</h3>
+
+<a href="https://cherrycreekschools-org.zoom.us/rec/share/0U-C9nQSKc_j71wV_jiOZiPPDrOU1Bgky5hpDAwESzsNMwkjySHCm-WcylfJhLTC.Wup4mmxlvVru2B7H?startTime=1627917362000">
+    Recording of Lesson 0
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1MvZDOOL9MNHlB5ALQY2odnUFeVwfN4y1/view">
+   Lesson 0  
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1R8wBPqXtMzjIgJOx1FuNk6STo0dhNKi9/view">
+    Notes 0  
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1Kz9P1eW_cxoImtGq-xe_joJAdAzxfSDi/view">
+    Lab 0  
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1FIf4ZN--PSm362MsfLUc1RkNxpkRRd4o/view">
+    Worksheet 0  
+</a>
+<BR>
+<BR>
+<BR>
+<a href="https://cherrycreekschools-org.zoom.us/rec/play/c14ii8EowtrXYDHWbhFh9U2l-pcw3-9_RPwQ5h8y5FkasbJf3VEfqY-f1B5oEg3zLCFGupkEAKTh0w7Z.RZNcOtrECQLh9b3F?startTime=1628004285000&_x_zm_rtaid=cuyrcmEvSQGVBDfsWvHgRw.1638850647741.b4903f3892fd682e038a513a635ac8dc&_x_zm_rhtaid=197">
+    Recording of Lesson 1
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1hK0VADA6iuXb2mknrD_eO_5QpHjwH6zC/view">
+   Lesson 1  
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1X0bZL1Pr0aqz_0nADWo3hEUDajziy5JN/view">
+    Notes 1  
+ </a>
+ <p></p>
+ <a href="https://drive.google.com/file/d/1TSZGF4kfzQDesxicFWZ5Plb-JNswYcdg/view">
+    Lab 1  
+ </a>
+ <p></p>
+ <a href="https://drive.google.com/file/d/1XAcY_-phUbroOIFA9LKor3w3nOxeLFbP/view">
+    Worksheet 1  
+ </a>
+ <BR>
+ <BR>
+ <BR>
+<a href="https://cherrycreekschools-org.zoom.us/rec/play/jFj20oSElyHBDCNhA90CSPF2YOZlzX5GIylDhNIl_paQwrc5JzDk_-Lxk-cL1lRBRNM7AG1qD3tyM_Yb.ucyuWfeynxPVzOwT?startTime=1628090164000&_x_zm_rtaid=cuyrcmEvSQGVBDfsWvHgRw.1638850647741.b4903f3892fd682e038a513a635ac8dc&_x_zm_rhtaid=197">
+    Recording of Lesson 2
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1_k_GBLq9CtwPhaFmMB2d7F99JC9RT8Sf/view">
+   Lesson 2  
+</a>
+<p></p>
+<a href="https://drive.google.com/file/d/1SSU80LQoQ6KvcldJ0CzXITmmyf3QKO-Q/view">
+    Notes 2  
+ </a>
+ <p></p>
+ <a href="https://drive.google.com/file/d/1oQyY6_CEx0Ap10n1eJ1Jc1fAAddGkEfQ/view">
+    Lab 2  
+ </a>
+ <p></p>
+ <a href="https://drive.google.com/file/d/181WlTBH4QF8WHXsmxONZyRRXAsKvgy7n/view">
+    Worksheet 2  
+ </a>
+
+<p></p>
+
+
+{% if admin == 1 %}
+<h1>Blog Post</h1>
+
+<h2 style="color: {{ color }}">{{message}}</h2>
+
+<div>
+    <form action="/resources" method="post">
+        <div class="input-group mb-3 justify-content-center">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Title</span>
+            </div>
+            <input required type="text" class="border form-group w-25 start" placeholder = "Title" name="title" aria-describedby="basic-addon1">
+        </div>  
+
+        <div class="input-group mb-3 justify-content-center">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Date</span>
+            </div>
+            <input required type="text" class="border form-group w-25 start" placeholder = "Date (ex. June 23, 2019)" name="date" aria-describedby="basic-addon1">
+        </div> 
+
+        <div class="input-group mb-3 justify-content-center">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Image Source</span>
+            </div>
+            <input required type="text" class="border form-group w-25" placeholder = "Image (ex. camps.jpg)" name="image" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3 justify-content-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Blog Post Text</span>
+            </div>
+        </div>
+
+        <div class="input-group mb-3 justify-content-center">
+            <textarea required name="text" rows="4" cols="50" class="border" id = "left" aria-describedby="basic-addon1">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Post</button>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}

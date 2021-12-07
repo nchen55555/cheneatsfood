@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block main %}
+
+<div id = "left" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <pclass="card-text">{{text}}</p>
+      <p class="card-text"><small class="text-muted">{{date}}</small></p>
+    </div>
+    <img src="static/{{image}}" class="center card-img-top" alt="{{title}}">
+  </div>
+
+
+
+{% endblock %}
+

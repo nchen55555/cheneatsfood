@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About Us
+{% endblock %}
+
+{% block main %}
+
+<h1>About Us</h1> 
+<p></p>
+
+<div class="row">
+    <div class="column">
+      <img class="image" src="static/mentor1.jpg" alt="Mentors/Founders" style="width:100%">
+      <p></p>
+      <form action="/mentors" method="GET">
+        <button type="submit" class="btn btn-outline-primary">Mentors</button>
+    </form>
+    </div>
+    <div class="column">
+      <img class="image" src="static/mentor2.jpg" alt="Volunteers" style="width:100%">
+      <p></p>
+      <form action="/volunteers" method="GET">
+        <button type="submit" class="btn btn-outline-primary">Volunteers</button>
+    </form>
+    </div>
+    <div class="column">
+      <img class="image" src="static/mentor3.jpg" alt="Professionals" style="width:100%">
+      <p></p>
+      <form action="/professionals" method="GET">
+        <button type="submit" class="btn btn-outline-primary">Professionals</button>
+    </form>
+    </div>
+</div>
+
+<hr>
+
+<h1>Our Sponsors</h1>
+<p></p>
+
+<div class="row">
+  <div class="column">
+    <img src="static/microsoft.jpg" alt="Microsoft" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="static/chicktech.jpg" alt="ChickTech" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="static/univ.jpg" alt="University of Denver" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="static/univ2.jpg" alt="Metro State University" style="width:100%">
+  </div>
+</div>
+
+{% endblock %}

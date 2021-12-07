@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+
+</script>
+
+
+<section class="col-container">
+    <img class="col" src="static/home.jpg" alt="Nicole and student" width="75%"/> 
+    <div class="col">
+        <h1>DTC Computer Science Camps</h1> 
+        <p>Dedicated to teaching computer science <br>
+            to middle school students in the Denver Tech area.</p> 
+        <form action="/flyer" method="GET">
+            <button type="submit" class="btn btn-outline-primary">Flyer</button>
+        </form>
+    </div>
+</section> 
+
+<hr>
+<section class="col-container">
+    <img class="col" width="100%"
+        src="static/logo.jpg" alt="logo">
+    </img>
+    <div class="col">
+        <h3> About Our Camps </p>
+        <h6>OUR MISSION</h6>
+        <p>Founded by two Cherry Creek High School Computer Science students, 
+            our camps aim to foster interest in computer science for middle school students. </p>
+        <h6>OUR PROCESS</h6>
+        <p>We teach the basics of computer science using the coding languages Processing and Java. 
+            We achieve this with a mixture of engaging lessons, notes, games, labs, and worksheets. 
+            Click on Sessions and Information to learn more!</p>
+        <h6>OUR IMPACT</h6>
+        <p>Past students go on to pave the way for computer science in their communities. 
+            Many are taking or signed up to take computer science courses at Cherry Creek High School. 
+            Others have founded their own programming clubs! Some have contacted us with questions about coding 
+            or for extra resources.</p>
+    </div>
+</section>  
+
+{% endblock %}
