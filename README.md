@@ -4,10 +4,11 @@ A web application built so that individuals can access the DTC Computer Science 
 
 ## Compiling the Website 
 
-Once Heroku (the web-hosting platform) is up and running, you can access the website via the link [here] (https://dtccscamps.herokuapp.com/); however, because at the time that I submitted this project Heroku was down, please access the website via the terminal commands first `. venv/bin/activate` then `flask run`. In other words, please type in `. venv/bin/activate` and click enter then type in `flask run`. The terminal will provide you a link to run the website. 
+Once Heroku (the web-hosting platform) is up and running, you can access the website via the link [here] (https://dtccscamps.herokuapp.com/); however, if Heroku is down again or simply not working, please access the website via the terminal commands first `. venv/bin/activate` then `flask run`. In other words, please type in `. venv/bin/activate` and click enter then type in `flask run`. The terminal will provide you a link to run the website. 
+
 
 ## Exploring the Website
-Upon accessing the website, you will find a webpage with a navigation panel that has 6 different tabs - DTC CS Camps (the homepage), About, Sessions and Information, Contact Us, Blog, and Log In. 
+Upon accessing the website, you will find a webpage with a navigation panel that has 6 different tabs - DTC CS Camps (the homepage), About, Sessions and Information, Contact Us, Blog, and Log In. You can also watch this video as I go through the project myself linked [https://youtu.be/eZlZbD-GdcA] (https://youtu.be/eZlZbD-GdcA).
 
 #### Home Page 
 On the home page, you should find a button, that when clicked, should lead to the Flyer page that displays a Flyer for the camps. In the About page, you should find three buttons: Mentors, Volunteers, and Professionals. Each of these buttons, once clicked, will lead to a different page. 
@@ -24,11 +25,11 @@ The Professionals Page displays professionals pictures and biographies of the pr
 
 ### Sessions and Information Page 
 
-Going back to the navigation panel, the Sessions and Information page displays the two different camp sessions ofered at DTC Computer Science Camps: Processing and Java. As you scroll down, there is also a registration form that takes in a future registrant's first name, last name, email, phone number, age, and has a check box to which camp sessions the registrant would like to take. Registrants are automatically registered as "members" of the camps, and therefore will be able to log in and access the additional resources of the camps. The registrant will receive their log in information via email after they have signed up for the camps. Towards the bottom of the Sessions and Information page are two videos that showcase what the camps were like in 2020 and 2019. Lastly, the Sessiona and Information page displays student and parent testimonials. 
+Going back to the navigation panel, the Sessions and Information page displays the two different camp sessions ofered at DTC Computer Science Camps: Processing and Java. As you scroll down, there is also a registration form that takes in a future registrant's first name, last name, email, phone number, age, and has a check box to which camp sessions the registrant would like to take. Registrants are automatically registered as "members" of the camps, and therefore will be able to log in and access the additional resources of the camps. The registrant will receive their log in information via email after they have signed up for the camps. Towards the bottom of the Sessions and Information page are two videos that showcase what the camps were like in 2020 and 2019. Lastly, the Sessions and Information page displays student and parent testimonials. 
 
 ### Contact Us Page 
 
-The Contact Us Page displays a contact us form that required the user to input their name, email, and message. To check if the contact us page is working, you can access the dtccscamp email account with a username of `dtccscamp@gmail.com` and a password of `DTCcsr0ck5!` The contact us form will send an email to the dtccscamp email.
+The Contact Us Page displays a contact us form that required the user to input their name, email, and message. To check if the contact us page is working, please email me at `nicole_chen@college.harvard.edu` or text me at `3035055533` so that I can send you a screenshot of the email sent to `dtccscamp@gmail.com`. I can also provide you the password of the email account if you contact me individually. The contact us form will send an email to the dtccscamp email.
 
 ### Blog Page
 
