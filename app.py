@@ -35,11 +35,11 @@ db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL U
 app.config.update(dict(
     DEBUG = True,
     MAIL_SERVER = 'imap.mail.yahoo.com',
-    MAIL_PORT = 993
-    MAIL_USE_TLS = False,
-    MAIL_USE_SSL = True,
+    MAIL_PORT = 993,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
     MAIL_USERNAME = 'dtccscamp@yahoo.com',
-    MAIL_PASSWORD = 'bgcovxgmahlykrsp',
+    MAIL_PASSWORD = 'mkmfyunpwfhhlbtq',
 ))
 mail = Mail(app)
 
@@ -511,7 +511,7 @@ def volunteers():
                    (first, last, age, email, interest, experience, notes))
             db.commit()
             #sends a mail message to the volunteer confirming their application
-            msg = Message('DTC Computer Science Camp Volunteer Application', sender = 'dtccscampyahoo.com', recipients = [email])
+            msg = Message('DTC Computer Science Camp Volunteer Application', sender = 'dtccscamp@yahoo.com', recipients = [email])
             msg.body = "Hi! Thank you for submitting your volunteer application to DTC Computer Science Camps! We will send out another email in the next coming weeks with more information on your application and its next steps."
             mail.send(msg)
             color = "green"
