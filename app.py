@@ -34,12 +34,12 @@ db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL U
 #establishes mail connection 
 app.config.update(dict(
     DEBUG = True,
-    MAIL_SERVER = 'smtp.sendgrid.net',
+    MAIL_SERVER = 'smtp.yahoo.com',
     MAIL_PORT = 587,
     MAIL_USE_TLS = True,
     MAIL_USE_SSL = False,
-    MAIL_USERNAME = 'apikey',
-    MAIL_PASSWORD = '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',
+    MAIL_USERNAME = 'dtccscamp@yahoo.com',
+    MAIL_PASSWORD = 'DTCcsr0ck5!',
 ))
 mail = Mail(app)
 
@@ -171,7 +171,7 @@ def info():
             db.commit()
 
             #constructs mail message to be sent from the dtccscamp@gmail.com account to the email provided in the input box
-            msg = Message('DTC Computer Science Camp Registration', sender = 'dtccscamp@gmail.com', recipients = [email])
+            msg = Message('DTC Computer Science Camp Registration', sender = 'dtccscamp@yahoo.com', recipients = [email])
             #mail message includes the user's username and password to log in to access the resources page
             msg.body = "Hi! Thank you for registering for DTC Computer Science Camps! We will send out another email in the next coming weeks about more information for the camps. Your username is \"" + name + "\" and your password is \"" + last + "\" You can change your password by logging in first then clicking the change username/password option."
             mail.send(msg)
@@ -227,7 +227,7 @@ def contact():
             m = "Message Sent! We will be in contact with you shortly."
 
             #adds a mail message titled "Contact Us Message" that is sent from dtccscamp@gmail.com to dtccscamp@gmail.com 
-            msg = Message('Contact Us Message', sender = 'dtccscamp@gmail.com', recipients = ['dtccscamp@gmail.com'])
+            msg = Message('Contact Us Message', sender = 'dtccscamp@yahoo.com', recipients = ['dtccscamp@yahoo.com'])
             msg.body = name + " with an email of " + email + " sent you this message: \n" + message
             mail.send(msg)
         #if the email inputted is not valid
@@ -511,7 +511,7 @@ def volunteers():
                    (first, last, age, email, interest, experience, notes))
             db.commit()
             #sends a mail message to the volunteer confirming their application
-            msg = Message('DTC Computer Science Camp Volunteer Application', sender = 'dtccscamp@gmail.com', recipients = [email])
+            msg = Message('DTC Computer Science Camp Volunteer Application', sender = 'dtccscampyahoo.com', recipients = [email])
             msg.body = "Hi! Thank you for submitting your volunteer application to DTC Computer Science Camps! We will send out another email in the next coming weeks with more information on your application and its next steps."
             mail.send(msg)
             color = "green"
