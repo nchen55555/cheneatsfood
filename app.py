@@ -403,8 +403,6 @@ def login():
             return render_template("login.html", message = message, color = color)
         #selects hash from members where the username is equal to the inputted username
         hash = db.execute("SELECT hash FROM members WHERE username = ?", [username]).fetchall()
-        print(hash)
-        print(check_password_hash(hash[0][0],password))
         #checks to there was a hash selected from members where the username was equal to the inputted username
         if hash == []:
             #no hash selected so the username was incorrect (there was no username)
