@@ -7,10 +7,14 @@
 {% block main %}
 
 <!--Change Password-->
-<h1 class = "left">Change Password</h1>
+<h1 class="left">
+    Change Password
+</h1>
 <!--displays the message (if the form was successfully submitted or not) with a color that is transmitted from flask-->
-<h3 class = "left" style="color: {{ color }}">{{message}}</h3>
-<form class = "left" action="/change" method="post">
+<h3 class="left" style="color: {{ color }}">
+    {{message}}
+</h3>
+<form class="left" action="/change" method="post">
     <div class="mb-3">
         <!-- old username input -->
         <input autocomplete="off" autofocus class="inputleft form-control mx-auto w-auto" id="username" name="oldusername" placeholder="Username" type="text">
@@ -24,6 +28,8 @@
         <input class="inputleft form-control mx-auto w-auto" name="newpassword" placeholder="New Password" type="password">
     </div>
     <!-- submit button -->
-    <button class="inputleft btn btn-primary" type="submit">Change</button>
+    <button class="inputleft btn btn-primary" type="submit">
+        Change
+    </button>
 </form>
 {% endblock %}

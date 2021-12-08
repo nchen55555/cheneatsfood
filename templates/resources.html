@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block main %}
-<h1>Session 2 Java Materials</h1>
+<h1>
+    Session 2 Java Materials
+</h1>
 
-<h3>Materials are posted daily! We'll also add recordings of our lessons once they're available.</h3>
+<h3>
+    Materials are posted daily! We'll also add recordings of our lessons once they're available.
+</h3>
 
 <!--links to the different resources that are available to registered users-->
 <a href="https://cherrycreekschools-org.zoom.us/rec/share/0U-C9nQSKc_j71wV_jiOZiPPDrOU1Bgky5hpDAwESzsNMwkjySHCm-WcylfJhLTC.Wup4mmxlvVru2B7H?startTime=1627917362000">
@@ -108,9 +112,13 @@
 
 <!--form that allows admins only to post more blogs-->
 {% if admin == 1 %}
-<h1>Blog Post</h1>
+<h1>
+    Blog Post
+</h1>
 <!--displays message from app.py with color css-->
-<h2 style="color: {{ color }}">{{message}}</h2>
+<h2 style="color: {{ color }}">
+    {{message}}
+</h2>
 
 <!--blog post form-->
 <div>
@@ -118,34 +126,45 @@
         <!--title input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
-                <span class="input-group-text">Title</span>
+                <span class="input-group-text">
+                    Title
+                </span>
             </div>
-            <input required type="text" class="border form-group w-25 start" placeholder = "Title" name="title">
+            <input required type="text" class="border form-group w-25 start" placeholder="Title" name="title">
         </div>  
         <!--date input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
-                <span class="input-group-text">Date</span>
+                <span class="input-group-text">
+                    Date
+                </span>
             </div>
-            <input required type="text" class="border form-group w-25 start" placeholder = "Date (ex. June 23, 2019)" name="date">
+            <input required type="text" class="border form-group w-25 start" placeholder="Date (ex. June 23, 2019)" name="date">
         </div> 
         <!--image source input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
-                <span class="input-group-text">Image Source</span>
+                <span class="input-group-text">
+                    Image Source
+                </span>
             </div>
-            <input required type="text" class="border form-group w-25" placeholder = "Image (ex. camps.jpg)" name="image">
+            <input required type="text" class="border form-group w-25" placeholder="Image (ex. camps.jpg)" name="image">
         </div>
         <!--blog input-->
         <div class="input-group mb-3 justify-content-center">
             <div class="input-group-prepend">
-                <span class="input-group-text">Blog Post Text</span>
+                <span class="input-group-text">
+                    Blog Post Text
+                </span>
             </div>
         </div>
         <div class="input-group mb-3 justify-content-center">
-            <textarea required name="text" rows="4" cols="50" class="border" id = "left"></textarea>
+            <textarea required name="text" rows="4" cols="50" class="border left">
+            </textarea>
         </div>
-        <button type="submit" class="btn btn-outline-primary">Post</button>
+        <button type="submit" class="btn btn-outline-primary">
+            Post
+        </button>
     </form>
 </div>
 {% endif %}
