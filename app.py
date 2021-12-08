@@ -34,12 +34,12 @@ db.execute("CREATE TABLE IF NOT EXISTS 'members' ('member_id' INTEGER NOT NULL U
 #establishes mail connection 
 app.config.update(dict(
     DEBUG = True,
-    MAIL_SERVER = 'smtp.yahoo.com',
-    MAIL_PORT = 587,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
+    MAIL_SERVER = 'imap.mail.yahoo.com',
+    MAIL_PORT = 993
+    MAIL_USE_TLS = False,
+    MAIL_USE_SSL = True,
     MAIL_USERNAME = 'dtccscamp@yahoo.com',
-    MAIL_PASSWORD = 'DTCcsr0ck5!',
+    MAIL_PASSWORD = 'bgcovxgmahlykrsp',
 ))
 mail = Mail(app)
 
