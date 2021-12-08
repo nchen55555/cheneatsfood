@@ -36,8 +36,8 @@ app.config.update(dict(
     DEBUG = True,
     MAIL_SERVER = 'imap.mail.yahoo.com',
     MAIL_PORT = 993,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
+    MAIL_USE_TLS = False,
+    MAIL_USE_SSL = True,
     MAIL_USERNAME = 'dtccscamp@yahoo.com',
     MAIL_PASSWORD = 'mkmfyunpwfhhlbtq',
 ))
