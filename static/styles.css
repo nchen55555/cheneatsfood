@@ -60,7 +60,6 @@ nav .navbar-brand{
 /*makes sure that the image has a 100% width and a 100% border radius (image will be circular)*/
 .image{
     border-radius: 100%;
-    width: 100%;
 }
 
 /*implemented in blog html to make blog page look nice*/
@@ -154,7 +153,7 @@ p{
     word-break: normal;
 }
 /*ensures that all images have 100% width */
-img{
+.img{
     width: 100%;
 }
 
