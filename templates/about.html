@@ -7,33 +7,39 @@
 {% block main %}
 
 <h1>About Us</h1> 
+
 <p></p>
+
 <!--about us section with three sections grouped by columns that display the mentors, volunteers, and professionals -->
 <!--code from https://www.w3schools.com/howto/howto_css_images_side_by_side.asp-->
 <div class="row">
     <div class="column">
-      <img class="image" src="static/mentor1.jpg" alt="Mentors/Founders" style="width:100%">
-      <p></p>
-      <!--button that allows the user to access the mentors page-->
-      <form action="/mentors" method="GET">
-        <button type="submit" class="btn btn-outline-primary">Mentors</button>
-    </form>
+        <img class="image" src="static/mentor1.jpg" alt="Mentors/Founders" style="width:100%">
+        <p></p>
+        <!--button that allows the user to access the mentors page-->
+        <form action="/mentors" method="GET">
+            <button type="submit" class="btn btn-outline-primary">
+                Mentors
+            </button>
+      </form>
     </div>
     <div class="column">
-      <img class="image" src="static/mentor2.jpg" alt="Volunteers" style="width:100%">
-      <p></p>
-      <!--button that allows the user to access the volunteers page-->
-      <form action="/volunteers" method="GET">
-        <button type="submit" class="btn btn-outline-primary">Volunteers</button>
-    </form>
+        <img class="image" src="static/mentor2.jpg" alt="Volunteers" style="width:100%">
+        <p></p>
+        <!--button that allows the user to access the volunteers page-->
+        <form action="/volunteers" method="GET">
+            <button type="submit" class="btn btn-outline-primary">
+                Volunteers
+            </button>
+        </form>
     </div>
     <div class="column">
-      <img class="image" src="static/mentor3.jpg" alt="Professionals" style="width:100%">
-      <p></p>
-      <!--button that allows the user to access the professional page-->
-      <form action="/professionals" method="GET">
-        <button type="submit" class="btn btn-outline-primary">Professionals</button>
-    </form>
+        <img class="image" src="static/mentor3.jpg" alt="Professionals" style="width:100%">
+        <p></p>
+        <!--button that allows the user to access the professional page-->
+        <form action="/professionals" method="GET">
+            <button type="submit" class="btn btn-outline-primary">Professionals</button>
+        </form>
     </div>
 </div>
 
@@ -43,22 +49,22 @@
 <p></p>
 <!--sponsors section that has four sections grouped by columns-->
 <div class="row">
-  <div class="column">
-    <!--image showing microsoft label-->
-    <img src="static/microsoft.jpg" alt="Microsoft" style="width:100%">
-  </div>
-  <div class="column">
-    <!--image showing chicktech label-->
-    <img src="static/chicktech.jpg" alt="ChickTech" style="width:100%">
-  </div>
-  <div class="column">
-    <!--image showing university of denver label-->
-    <img src="static/univ.jpg" alt="University of Denver" style="width:100%">
-  </div>
-  <div class="column">
-    <!--image showing metro state university label-->
-    <img src="static/univ2.jpg" alt="Metro State University" style="width:100%">
-  </div>
+    <div class="column">
+        <!--image showing microsoft label-->
+        <img src="static/microsoft.jpg" alt="Microsoft" style="width:100%">
+    </div>
+    <div class="column">
+        <!--image showing chicktech label-->
+        <img src="static/chicktech.jpg" alt="ChickTech" style="width:100%">
+    </div>
+    <div class="column">
+        <!--image showing university of denver label-->
+        <img src="static/univ.jpg" alt="University of Denver" style="width:100%">
+    </div>
+    <div class="column">
+        <!--image showing metro state university label-->
+        <img src="static/univ2.jpg" alt="Metro State University" style="width:100%">
+    </div>
 </div>
 
 {% endblock %}

@@ -145,27 +145,27 @@ def info():
             db.execute("INSERT INTO registration (first, last, age, email, phonenumber, camp) VALUES (?, ?, ?, ?, ?, ?)", 
                     (first, last, age, email, number, camps))
             db.commit()
-            #index is a variable that represents the number of users who already have the registered first name and last name
-            #index will be added on to the username of the registered user if there are more than one registrant with the same first and last name
+            #index is a variable that represents the number of users who already have the registered first name
+            #index will be added on to the username of the registered user if there are more than one registrant with the same first name
             index = 1
-            #name is a substitute variable for first that will take on index if there are more than one registrant with the same first and last name
+            #name is a substitute variable for first that will take on index if there are more than one registrant with the same first name
             name = first
             #do while loop
             while True:
-                #selects all cases where first name and last name in registrants equals the inputted first name and last name
-                rows = db.execute("SELECT * FROM members WHERE firstname = ? AND lastname = ?", (name, last)).fetchall()
-                #checks to see if the registrant's lastname and firstname are already used in the members database 
-                #if there is no one else in registrant with the same last and first name, then the loop breaks 
+                #selects all cases where username in members equals the inputted first name
+                rows = db.execute("SELECT * FROM members WHERE username = ?", [name]).fetchall()
+                #checks to see if the registrant's firstname are already used in the members database 
+                #if there is no one else in registrant with the same first name, then the loop breaks 
                 if rows == []:
                     break
                 
-                #however if there are others in registrant with the same last and first name, then index increments and is added on to name 
+                #however if there are others in registrant with the same first name, then index increments and is added on to name 
                 index += 1
-                #by adding on the new index to first to create name, the inserted username value will be different from registrants with the same first and last name
+                #by adding on the new index to first to create name, the inserted username value will be different from registrants with the same first name
                 name = first + str(index)
                 
             #database command that inserts the first, last, username, password, and whether the user is an admin or not value into the members database
-            #note: username is the first name of the registrant plus index if there are more than one registrant with the same first/last name
+            #note: username is the first name of the registrant plus index if there are more than one registrant with the same first name
             #note: hash is the hashed last name of the registrant. This is a temporary password that can be changed by the user
             db.execute("INSERT INTO members (firstname, lastname, username, hash, admin) VALUES (?, ?, ?, ?, ?)", (first, last, name, generate_password_hash(last), False))
             db.commit()
@@ -297,21 +297,21 @@ def resources():
         #checks to see if user inputted a title, date, image source, and text or else outputs an error message
         if not title:
             message = "Please input a title."
-            return render_template("resources.html", color = color, message = message)
+            return render_template("resources.html", admin = admin, color = color, message = message)
         if not date:
             message = "Please input a date."
-            return render_template("resources.html", color = color, message = message)
+            return render_template("resources.html", admin = admin, color = color, message = message)
         if not image:
             message = "Please input an image source"
-            return render_template("resources.html", color = color, message = message)
+            return render_template("resources.html", admin = admin, color = color, message = message)
         if not text:
             message = "Please input blog text"
-            return render_template("resources.html", color = color, message = message)
+            return render_template("resources.html", admin = admin, color = color, message = message)
 
         #checks to see if the user is an admin or not to make sure that blog posts are only sent by administrators
         if not admin:
             message = "You are not an administrator and therefore do not have access to post blogs."
-            return render_template("resources.html", color = color, message = message)
+            return render_template("resources.html", admin = admin, color = color, message = message)
         
         #tries to insert blogs according to the inputted data
         try:
@@ -401,9 +401,10 @@ def login():
         if not password:
             message = "Please input a password"
             return render_template("login.html", message = message, color = color)
-        
         #selects hash from members where the username is equal to the inputted username
         hash = db.execute("SELECT hash FROM members WHERE username = ?", [username]).fetchall()
+        print(hash)
+        print(check_password_hash(hash[0][0],password))
         #checks to there was a hash selected from members where the username was equal to the inputted username
         if hash == []:
             #no hash selected so the username was incorrect (there was no username)

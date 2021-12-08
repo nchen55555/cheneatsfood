@@ -6,23 +6,25 @@
 
 {% block main %}
 
-<h1 id = "left">Log In</h1>
+<h1 class="left">Log In</h1>
 
-<p id="left">Once you have registered for the camps, you will receive your login information via email. You can later change your password, but if you desire to 
-    change your email, please email us. Logging in will give you access to the resources page. </p>
+<p class="left">Once you have registered for the camps, you will receive your login information via email. You can later change your password, but if you desire to 
+    change your email, please email us. Logging in will give you access to the resources page. 
+</p>
+
 <!--displays the message that was passed by app.py via color css-->   
-<h3 id = "left" style="color: {{ color }}">{{message}}</h3>
-    <!--login form-->
-    <form id = "left" action="/login" method="post">
-        <div class="mb-3">
-            <!-- username input -->
-            <input autocomplete="off" autofocus class="inputleft form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="mb-3">
-            <!-- password input -->
-            <input class="inputleft form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <!-- submit button -->
-        <button class="inputleft btn btn-primary" type="submit">Log In</button>
-    </form>
+<h3 class = "left" style="color: {{ color }}">{{message}}</h3>
+<!--login form-->
+<form class = "left" action="/login" method="post">
+    <div class="mb-3">
+        <!-- username input -->
+        <input autocomplete="off" autofocus class="inputleft form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="mb-3">
+        <!-- password input -->
+        <input class="inputleft form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+    </div>
+    <!-- submit button -->
+    <button class="inputleft btn btn-primary" type="submit">Log In</button>
+</form>
 {% endblock %}

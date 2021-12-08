@@ -1,9 +1,11 @@
-.col-container {
+/*css that allows responsive column positioning*/
+/*code found here https://www.w3schools.com/css/css_grid.asp*/
+.col-container{
     display: table;
     width: 100%;
 }
 
-.col {
+.col{
     display: table-cell;
     padding: 16px;
     color: black;
@@ -11,152 +13,124 @@
     vertical-align: middle;
 }
   
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
     .col { 
       display: block;
       width: 100%;
     }
 }
-
-.text {
+/*makes sure that all the text is black, vertically aligned to the center*/
+.text{
     color: black;
     text-align: center;
     vertical-align: middle;
 }
-
-
+/*makes sure that the text is underlined and bolded*/
 h6{
     text-decoration: underline;
     font-weight: bold;
 }
 
 /* Size for brand */
-nav .navbar-brand
-{
+nav .navbar-brand{
     font-size: xx-large;
 }
 
-/* Colors for brand */
-nav .navbar-brand .lightblue
-{
-    color: #26C0E9;
-}
-
-nav .navbar-brand .lightyellow
-{
-    color: #E6E926;
-}
-nav .navbar-brand .lightgreen
-{
-    color: #29E926;
-}
-nav .navbar-brand .purple
-{
-    color: #5915F5;
-}
-
-* {
+*{
     box-sizing: border-box;
 }
   
-* {
+*{
     box-sizing: border-box;
 }
 
-/*about html */
-.column {
+/*utilized in about.html that separates rows/columns to make table-like web display*/
+/*code found here https://www.w3schools.com/howto/howto_css_images_side_by_side.asp*/
+.column{
     float: left;
     width: 33.33%;
     padding: 5px;
 }
-  
-  /* Clearfix (clear floats) */
-.row::after {
+.row::after{
     content: "";
     clear: both;
     display: table;
 }
-.image {
+
+/*makes sure that the image has a 100% width and a 100% border radius (image will be circular)*/
+.image{
     border-radius: 100%;
+    width: 100%;
 }
 
-/*blog html*/
-
-* {
+/*implemented in blog html to make blog page look nice*/
+/*https://www.w3schools.com/howto/howto_css_blog_layout.asp*/
+*{
     box-sizing: border-box;
-}
-  
+} 
 /* Add a gray background color with some padding */
-body {
+body{
     font-family: Arial;
     padding: 20px;
     background: #f1f1f1;
-}
-  
+} 
 /* Header/Blog Title */
-.header {
+.header{
     padding: 30px;
     font-size: 40px;
     text-align: center;
     background: white;
-}
-  
+} 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
-.leftcolumn {   
+.leftcolumn{   
     float: left;
     width: 75%;
-}
-  
+}  
 /* Right column */
-.rightcolumn {
+.rightcolumn{
     float: left;
     width: 25%;
     padding-left: 20px;
-}
-  
+}  
 /* Fake image */
-.fakeimg {
+.fakeimg{
     background-color: #aaa;
     width: 100%;
     padding: 20px;
-}
-  
+}  
 /* Add a card effect for articles */
-.card {
+.card{
      background-color: white;
      padding: 20px;
      margin-top: 20px;
-}
-  
+} 
 /* Clear floats after the columns */
-.row:after {
+.row:after{
     content: "";
     display: table;
     clear: both;
-}
-  
+} 
 /* Footer */
-.footer {
+.footer{
     padding: 20px;
     text-align: center;
     background: #ddd;
     margin-top: 20px;
-}
-  
+}  
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px){
     .leftcolumn, .rightcolumn {   
         width: 100%;
         padding: 0;
     }
 }
-
-#module {
+#module{
     font-size: 1rem;
     line-height: 1.5;
 }
-.center {
+/*ensures that the text or input is centered*/
+.center{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -164,20 +138,23 @@ body {
     height:auto;
 }
 
-/*change html*/
-
-#left{
+/*aligns the text to the left*/
+.left{
     text-align:left;
 }
+/*aligns the input to the left*/
 .inputleft {
     float: left;
     clear: both;
     margin-bottom: 10px;
 }
 
-/*volunteers html*/
-
+/*ensures that there are word breaks in paragraphs*/
 p{
     word-break: normal;
+}
+/*ensures that all images have 100% width */
+img{
+    width: 100%;
 }
 
