@@ -12,41 +12,60 @@
 <p></p>
 
 <!--displays the message (if the form was successfully submitted or not) with a color that is transmitted from flask-->
-<h2 style="color: {{ color }}">{{m}}</h2>
+<h2 style="color: {{ color }}">
+    {{m}}
+</h2>
 
 <form action="/contact" method="post">
     <!--input for name-->
     <div class="input-group mb-3 justify-content-center">
         <div class="input-group-prepend">
-            <span class="input-group-text">Name</span>
+            <span class="input-group-text">
+                Name
+            </span>
         </div>
         <input required type="text" class="border form-group w-25 start" name="name">
     </div> 
     <!--input for email-->
     <div class="input-group mb-3 justify-content-center">
         <div class="input-group-prepend">
-            <span class="input-group-text">Email</span>
+            <span class="input-group-text">
+                Email
+            </span>
         </div>
         <input required type="text" class="border form-group w-25 start" name="email">
     </div> 
     <!--input for message-->
     <div class="input-group mb-3 justify-content-center">
         <div class="input-group-prepend">
-            <span class="input-group-text">Message</span>
+            <span class="input-group-text">
+                Message
+            </span>
         </div>
     </div>
     <div class="input-group mb-3 justify-content-center">
-        <textarea required name="message" rows="4" cols="75" class="border start"></textarea>
+        <textarea required name="message" rows="4" cols="75" class="border start">
+        </textarea>
     </div> 
     <!--submit button-->
-    <button type="submit" class="btn btn-outline-primary">Contact Us</button>
+    <button type="submit" class="btn btn-outline-primary">
+        Contact Us
+    </button>
 </form>
 
 <hr>
 
-<h5>DTC Computer Science Camps</h5>
-<h6>dtccscamp@gmail.com</h6>
-<h6>nicole_chen@college.harvard.edu</h6>
-<h6>sidijju@berkeley.edu</h6> 
+<h5>
+    DTC Computer Science Camps
+</h5>
+<h6>
+    dtccscamp@gmail.com
+</h6>
+<h6>
+    nicole_chen@college.harvard.edu
+</h6>
+<h6>
+    sidijju@berkeley.edu
+</h6> 
 
 {% endblock %}
