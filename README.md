@@ -1,6 +1,6 @@
 # DTC Computer Science Camps 
 
-A web application built so that individuals can access the DTC Computer Science Camps website, register for the camps, sign up to be a volunteer, access resources posted on the camp website once registered to the camps, and read through the camps' blog posts. 
+A web application built so that individuals can access the DTC Computer Science Camps website, register for the camps, sign up to be a volunteer, access resources posted on the camp website once registered to the camps, and read through the camps' blog posts. Please access my github account [here] (https://github.com/nchen55555/DTCCSCamps)
 
 ## Compiling the Website 
 
