@@ -14,3 +14,6 @@ CREATE TABLE IF NOT EXISTS recipes (recipe_id INTEGER NOT NULL UNIQUE PRIMARY KE
                                     title TEXT NOT NULL, 
                                     imagesource TEXT NOT NULL, 
                                     content TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS cover (cover_id INTEGER NOT NULL UNIQUE PRIMARY KEY, 
+                                    imagesource TEXT NOT NULL);

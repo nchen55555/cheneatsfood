@@ -17,6 +17,7 @@ with open('schema.sql') as f:
 
 cur = db.cursor()
 
+
 def get_db_connection():
     conn = sqlite3.connect('food.db')
     conn.row_factory = sqlite3.Row
@@ -24,22 +25,21 @@ def get_db_connection():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    conn = get_db_connection()
+    photos = conn.execute('SELECT * FROM cover').fetchall()
+    return render_template("index.html", photos = photos)
 
 
 @app.route("/cookbook")
 def cookbook():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM recipes').fetchall()
-    for ele in posts: 
-        print(ele['recipe_id'])
     conn.close()
     return render_template('cookbook.html', posts=posts)
 
 @app.route("/recipe")
 def recipe():
     """Show blog page"""
-    print("recipe")
     recipeid = request.args.get("recipeid")
 
     if recipeid is None:
@@ -88,6 +88,32 @@ def createrecipe():
             return redirect('/')
 
     return render_template('createrecipe.html')
+
+@app.route('/addphotos/', methods=('GET', 'POST'))
+def gallery():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            print(f'No file, {request.files=}')
+            flash('No file part')
+            return redirect('/')
+        
+        imagesource = request.files['file']  
+
+        if not imagesource: 
+            flash('Image is required!')
+        else:
+            if imagesource and allowed_file(imagesource.filename):
+                filename = secure_filename(imagesource.filename)
+                imagesource.save(os.path.join(app.config['UPLOAD'], filename))
+                conn = get_db_connection()
+                conn.execute('INSERT INTO cover (imagesource) VALUES (?)',
+                            (imagesource.filename, ))
+                print("success")
+                conn.commit()
+                conn.close()
+            return redirect('/')
+
+    return render_template('addphotos.html')
 
 @app.route('/createreview/', methods=('GET', 'POST'))
 def createreview():

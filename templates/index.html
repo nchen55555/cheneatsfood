@@ -4,7 +4,6 @@
 <section class="container">
     <div class="column">
       <h1>hey y'all</h1>
-    
       <h2>welcome to 
         <span">cheneatsfood</span>. 
       </h2>
@@ -21,10 +20,12 @@
         </li>
       </p>
     </div>
-
+    {% if photos|length > 0 %}
     <div class="column">
-      <img src="static/profile_pic1.JPG" alt=""class="image--cover" /> 
+      <p>{{photos[0]['imagesources']}}</p>
+      <img src="https://nchen55555.github.io/headshot.png" alt=""class="image--cover" /> 
     </div>
+    {% endif %}
 </section>
 
 {% endblock %}

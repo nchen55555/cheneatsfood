@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container-fluid scroll">
+    <form method="POST" enctype=multipart/form-data>
+        <label for="title">Gallery Image</label>
+        <br>
+        <input type="file" name="file"/>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</div>
+{% endblock %}
