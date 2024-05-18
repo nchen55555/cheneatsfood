@@ -62,7 +62,6 @@ def createrecipe():
         title = request.form['title']
         content = request.form['content']
         if 'file' not in request.files:
-            print(f'No file, {request.files=}')
             flash('No file part')
             return redirect('/')
         
@@ -76,9 +75,7 @@ def createrecipe():
             flash('Content is required!')
         else:
             if imagesource and allowed_file(imagesource.filename):
-                print("good to go 1")
                 filename = secure_filename(imagesource.filename)
-                print(filename)
                 imagesource.save(os.path.join(app.config['UPLOAD'], filename))
                 conn = get_db_connection()
                 conn.execute('INSERT INTO recipes (title, imagesource, content) VALUES (?, ?, ?)',
@@ -93,7 +90,6 @@ def createrecipe():
 def gallery():
     if request.method == 'POST':
         if 'file' not in request.files:
-            print(f'No file, {request.files=}')
             flash('No file part')
             return redirect('/')
         
@@ -108,7 +104,6 @@ def gallery():
                 conn = get_db_connection()
                 conn.execute('INSERT INTO cover (imagesource) VALUES (?)',
                             (imagesource.filename, ))
-                print("success")
                 conn.commit()
                 conn.close()
             return redirect('/')
