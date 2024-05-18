@@ -3,27 +3,31 @@
 {% block body %}
 <section class="container">
     <div class="column">
-      <h1>hey y'all</h1>
+      <h1>hey y'all! </h1>
       <h2>welcome to 
         <span">cheneatsfood</span>. 
       </h2>
       <p>
-        my name is nicole chen, and this is my online <span">cookbook</span> documenting all the delicious recipes i've made and reviewing my food adventures in bos, nyc, den, la, and more! a couple highlights about me and my palette... 
+        my name is nicole chen, and this is my online <span">cookbook</span> and <span">food reviews</span> documenting all the recipes i've learned and reviewing some food adventures in bos, nyc, den, la, and more! most of america BUTCHERS sichuan food so i'm excited to bring my parent's chengdu origins online and share it with y'all! a couple of quirks :D 
         <li>
-            favorite cuisine? i love 四川和粤菜
+            favorite cuisine? 四川和粤菜
         </li>
         <li>
             fun fact? i was pescatarian for two years 
         </li>
         <li>
-            must-have ingredient? cooking wine  
+            favorite vegetable? scallions and cabbage   
         </li>
+      </p>
+      <br>
+      <p>
+        i'm very serious about food - don't let this jank website fool you (i made it in a day and have always sucked at frontend lol). if you have any recipes that you'd like to document/contribute on the site, please please let me know! would love to further expand this cookbook! you can dm me <span">@cheneatsfood</span> on insta. otherwise, please enjoy and explore this during your free time!  
       </p>
     </div>
     {% if photos|length > 0 %}
     <div class="column">
       <p>{{photos[0]['imagesources']}}</p>
-      <img src="https://nchen55555.github.io/headshot.png" alt=""class="image--cover" /> 
+      <img src="https://nchen55555.github.io/profile_pic1.jpg" alt=""class="image--cover" /> 
     </div>
     {% endif %}
 </section>
