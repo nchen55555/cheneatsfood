@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container-fluid scroll">
+    <form method="POST" enctype=multipart/form-data>
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Post title"
+               value="{{request.form['title'] }}"></input>
+        <br>
+
+        <label for="title">Image</label>
+        <input type="file" name="file"/>
+        <br>
+        <label for="content">Recipe Content</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Recipe content"
+                  rows="15"
+                  cols="60"
+                  >{{request.form['content']}}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</div>
+
+
+{% endblock %}

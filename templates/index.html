@@ -1,70 +1,30 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Home
-{% endblock %}
-
-{% block main %}
-
-<!--displays the home image and a description of DTC Computer Science Camps in column/column format-->
-<section class="col-container">
-    <!--shows the home page camp image in one column-->
-    <img class="img col" src="static/home.jpg" alt="Nicole and student"/> 
-    <!--displays the home page description in a different column-->
-    <div class="col">
-        <h1>
-            DTC Computer Science Camps
-        </h1> 
-        <p>
-            Dedicated to teaching computer science 
-            <BR>
-            to middle school students in the Denver Tech area.
-        </p> 
-        <!--button that redirects user to the flyer page-->
-        <form action="/flyer" method="GET">
-            <button type="submit" class="btn btn-outline-primary">
-                Flyer
-            </button>
-        </form>
+{% block body %}
+<section class="container">
+    <div class="column">
+      <h1>hey y'all</h1>
+    
+      <h2>welcome to 
+        <span">cheneatsfood</span>. 
+      </h2>
+      <p>
+        my name is nicole chen, and this is my online <span">cookbook</span> documenting all the delicious recipes i've made and reviewing my food adventures in bos, nyc, den, la, and more! a couple highlights about me and my palette... 
+        <li>
+            favorite cuisine? i love 四川和粤菜
+        </li>
+        <li>
+            fun fact? i was pescatarian for two years 
+        </li>
+        <li>
+            must-have ingredient? cooking wine  
+        </li>
+      </p>
     </div>
-</section> 
 
-<hr>
-
-<!--displays the logo image and the goals of DTC Computer Science Camps in column/column format-->
-<section class="col-container">
-    <!--displays the logo image in a column format-->
-    <img class="img col" src="static/logo.jpg" alt="logo">
-    <!--displays the home page goals in a different column-->
-    <div class="col">
-        <h3>
-            About Our Camps
-        </h3>
-        <h6>
-            OUR MISSION
-        </h6>
-        <p>
-            Founded by two Cherry Creek High School Computer Science students, 
-            our camps aim to foster interest in computer science for middle school students.
-        </p>
-        <h6>
-            OUR PROCESS
-        </h6>
-        <p>
-            We teach the basics of computer science using the coding languages Processing and Java. 
-            We achieve this with a mixture of engaging lessons, notes, games, labs, and worksheets. 
-            Click on Sessions and Information to learn more!
-        </p>
-        <h6>
-            OUR IMPACT
-        </h6>
-        <p>
-            Past students go on to pave the way for computer science in their communities. 
-            Many are taking or signed up to take computer science courses at Cherry Creek High School. 
-            Others have founded their own programming clubs! Some have contacted us with questions about coding 
-            or for extra resources.
-        </p>
+    <div class="column">
+      <img src="static/profile_pic1.JPG" alt=""class="image--cover" /> 
     </div>
-</section>  
+</section>
 
 {% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container-fluid scroll">
+  <div class="row row-cols-2 g-3">
+    {% for i in range(0, posts|length, 2) %} 
+    {% if posts|length >= i + 2 %}
+    <div class="col" style="width: 40%;">  
+      <div class="card" style="width: 100%;">
+        <img src="static/{{posts[i]['imagesource']}}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{posts[i]['title']}}</h5>
+          <form action="/recipe" method="get">
+            <button name="recipeid" type="submit" value="{{posts[i]['recipe_id']}}">
+                recipe
+            </button>
+          </form> 
+        </div>
+      </div>
+    </div> 
+    <div class="col" style="width: 40%;">  
+      <div class="card" style="width: 100%;">
+        <img src="static/{{posts[i+1]['imagesource']}}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{posts[i+1]['title']}}</h5>
+          <form action="/recipe" method="get">
+            <button name="recipeid" type="submit" value="{{posts[i+1]['recipe_id']}}">
+                recipe
+            </button>
+          </form> 
+        </div>
+      </div>
+    </div> 
+    {% else %}
+    <div class="col" style="width: 40%;">  
+      <div class="card" style="width: 100%;">
+        <img src="static/{{posts[i]['imagesource']}}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{posts[i]['title']}}</h5>
+          <form action="/recipe" method="get">
+            <button name="recipeid" type="submit" value="{{posts[i]['recipe_id']}}">
+                recipe
+            </button>
+          </form> 
+        </div>
+      </div>
+    </div> 
+    {% endif %}
+  </div> 
+  
+  {% endfor %}
+</div>
+{% endblock %}

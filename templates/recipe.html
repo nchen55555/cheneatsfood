@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container-fluid scroll">
+    <section class="container">
+        <div class="column">
+            <img src="static/{{image}}" class="img-fluid" alt="Responsive image">
+          </div>
+          
+        <div class="column">
+            <h1>{{title}}</h1>
+            {{content}}
+        </div>
+    
+    </section>
+</div>
+{% endblock %}
